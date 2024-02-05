@@ -1,0 +1,29 @@
+{
+  "name": "day1_p1",
+  "version": "1.0.0",
+  "description": "Connect the React Frontend to the Express backend and fetch data from an API endpoint and display message on the Screen",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js",
+    "server": "nodemon Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Kumar-Aryan-NIET/30Days_MERN_Challenge.git"
+  },
+  "author": "Kumar Aryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kumar-Aryan-NIET/30Days_MERN_Challenge/issues"
+  },
+  "homepage": "https://github.com/Kumar-Aryan-NIET/30Days_MERN_Challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
