@@ -11,7 +11,9 @@ app.get('/', (req, res) => {
 // otherwise you have to define particular route first to work.
 // Execution of route is from top to bottom, so if you define a route at the bottom, it will execute at last.
 
-
+app.get('/api/data', (req, res) => {
+  res.json({ message: 'Hello from API!' });
+});
 
 // This app starts a server and listens on port 3000 for connections.
 app.listen(port, () => {
