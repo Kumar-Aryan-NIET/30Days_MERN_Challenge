@@ -1,24 +1,27 @@
 # 30 Days MERN Challenge
 
+![alt text](image.png)
 
 ## Links
 
 react official link
- - hooks
- - component
- - learn
- - vite 
-cra
-- file structure 
+
+- hooks
+- component
+- learn
+- vite
+  cra
+- file structure
 
 vit
+
 - file structure
 
 ## npm and npx
 
 _npm : Node Package Manager_
 
-& 
+&
 
 _npx : Node Package Execute_
 
@@ -29,6 +32,7 @@ npm and npx are both CLI tools from the Node.js ecosystem, but they serve differ
 npm (Node Package Manager): npm is the default package manager for Node.js. It allows you to install, update, and manage packages from the npm registry and manage project dependencies. When you install packages using npm, they are saved in the node_modules directory in your project.
 
 For example, to install a package like Express, you would use:
+
 ```cmd
     npm install express
 ```
@@ -126,5 +130,3 @@ Vite: Vite doesn't come with a pre-configured ESLint setup. You have to set it u
 In both cases, you can run ESLint via an npm script (like "lint": "eslint ."), or integrate it with your editor for real-time linting.
 
 In summary, while both CRA and Vite can use ESLint, CRA comes with a pre-configured setup that is somewhat limited in terms of customization, while Vite requires manual setup but offers more flexibility.
-
-
