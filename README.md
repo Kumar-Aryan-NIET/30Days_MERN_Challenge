@@ -6,16 +6,111 @@
 
 react official link
 
-- hooks
-- component
-- learn
-- vite
-  cra
-- file structure
+- Rules of React [ https://react.dev/reference/rules]
 
-vit
+- hooks Reference
+  - react@18.3.1 ~[ https://react.dev/reference/react/hooks ]
+  - react-dom@18.3.1 ~[ https://react.dev/reference/react-dom/hooks ]
+- Some CustomHooks [ https://usehooks.com]
 
-- file structure
+- component Reference
+
+  - react@18.3.1 ~[ https://react.dev/reference/react/components ]
+
+  - react-dom@18.3.1 [ https://react.dev/reference/react-dom/components ]
+
+- Api References
+
+  - react@18.3.1 [ https://react.dev/reference/react/apis ]
+
+  - react-dom@18.3.1 [ https://react.dev/reference/react-dom ]
+
+- client Api Reference
+
+  - react-dom@18.3.1 [ https://react.dev/reference/react-dom/client ]
+
+- server Api Reference
+
+  - react-dom@18.3.1 [ https://react.dev/reference/react-dom/server ]
+
+- Legacy React Api
+  - Legacy [ https://react.dev/reference/react/legacy ]
+
+# Create React App (CRA) vs Vite
+
+## Create React App (CRA)
+
+### Pros:
+
+- **Ease of Use:** CRA provides a simple way to create a new React application with a single command.
+- **Out-of-the-box Configuration:** Comes with a pre-configured setup for building, testing, and deploying React applications.
+- **Community Support:** Large community and extensive documentation.
+
+### Cons:
+
+- **Performance:** Slower build times and larger bundle sizes compared to Vite.
+- **Customization:** Limited configuration options without ejecting, which can make it harder to customize the build process.
+
+### File Structure:
+
+```
+my-app/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   └── ...
+├── .gitignore
+├── package.json
+├── [README.md]
+└── yarn.lock / package-lock.json
+```
+
+## Vite
+
+### Pros:
+
+- **Performance:** Faster build times and smaller bundle sizes due to its modern architecture.
+- **Flexibility:** Highly customizable and supports various front-end frameworks.
+- **Modern Features:** Supports ES modules and modern JavaScript features out of the box.
+
+### Cons:
+
+- **Learning Curve:** May require more initial setup and understanding compared to CRA.
+- **Community:** Smaller community compared to CRA, but growing rapidly.
+
+### File Structure:
+
+```
+my-app/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.vue / App.jsx / App.tsx
+│   ├── main.js / main.ts
+│   └── ...
+├── .gitignore
+├── index.html
+├── package.json
+├── [README.md]
+└── vite.config.js
+```
+
+## Summary
+
+- **CRA** is great for beginners and those who want a quick setup with minimal configuration.
+- **Vite** is ideal for developers who need faster build times and more flexibility in their project setup.
 
 ## npm and npx
 
@@ -49,13 +144,144 @@ In summary, while npm is used for managing and installing your project's depende
 
 ---
 
-### installation in CRA
+## installation in CRA
+
+### Installation, Setup, Extension/Plugin Support, and Deployment in CRA
+
+#### Installation
+
+1. **Install Node.js**: Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+2. **Create a New React App**:
+   ```sh
+   npx create-react-app my-app
+   cd my-app
+   ```
+
+## Setup
+
+**Start the Development Server:**
+
+```
+npm start
+```
+
+**Build for Production**
+
+```
+npm run build
+```
+
+### Extension/Plugin Support
+
+1. **Adding a Plugin**: CRA does not support plugins directly. To add custom configurations, you need to eject the app:
+
+```
+npm run eject
+```
+
+- After ejecting, you can modify the webpack configuration and add plugins as needed.
+
+### Deployment
+
+Deploy to GitHub Pages:
+
+- Install the gh-pages package:
+
+```
+npm install --save gh-pages
+```
+
+- Add the following scripts to package.json
+
+```
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+
+- Deploy the app:
+
+```
+npm run deploy
+```
 
 ---
 
-### installation in vite
+## installation in vite
+
+### Installation, Setup, Extension/Plugin Support, and Deployment in Vite
+
+#### Installation
+
+1. **Install Node.js**: Ensure you have Node.js installed. You can download it from nodejs.org.
+2. **Create a New Vite App**:
+
+```
+npm create vite@latest my-app
+cd my-app
+npm install
+```
+
+## Setup
+
+**Start the Development Server:**
+
+```
+npm run dev
+```
+
+**Build for Production**
+
+```
+npm run build
+```
+
+### Extension/Plugin Support
+
+1. **Adding a Plugin**: Vite supports plugins directly. Install the desired plugin and add it to vite.config.js:
+
+```
+npm install @vitejs/plugin-react
+```
+
+- Update vite.config.js
 
 ---
+
+```
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()]
+});
+```
+
+#### Deployment
+
+1. Deploy to GitHub Pages:
+
+   - Install the gh-pages package:
+
+   ```
+   npm install gh-pages --save-dev
+   ```
+
+   - Add the following scripts to package.json:
+
+   ```
+   "scripts": {
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist"
+   }
+   ```
+
+   - Deploy the app:
+
+   ```
+   npm run deploy
+   ```
 
 ## Package.json
 
